@@ -4,8 +4,8 @@
   "description": "covid-19 tracker",
   "main": "app.js",
   "scripts": {
-     "start": "node index.js" ,
-    "test": "echo \"Error: no test specified\" && exit 1"    
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "satyaki",
   "license": "ISC",
@@ -20,5 +20,6 @@
   },
   "engines": {
     "node": "12.16.2"
-  }
+  },
+  "devDependencies": {}
 }
