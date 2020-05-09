@@ -1,0 +1,83 @@
+<%- include("partials/header") %>
+<h1>COVID-19 Tracker</h1>
+<div class="container">	
+	<div class="row">
+	  <div class="col s3">
+			<!-- Grey navigation panel -->
+	  </div>
+	  <div class="col s9 ">
+		<table>
+		<thead>
+		  <tr>
+			  <th>State</th>
+			  <th>Confirmed</th>
+			  <th>Recovered</th>
+			  <th>Deaths</th>
+		  </tr>
+		</thead>
+		<tbody>
+			<% data["statewise"].forEach(function(name){ %>
+			  <tr>
+				<% if(name["statecode"]!="TT"){ %>
+					<td><a href="/<%= name['statecode']%>"><%= name["state"] %></a></td>
+					<td><%= name["confirmed"] %>
+						<span class="badge red-text text-darken-1">
+							<% if(name["deltaconfirmed"]!=0){ %>
+								<%= name["deltaconfirmed"] %>
+								<i class="material-icons">arrow_upward</i>
+							<% } %>
+						</span>
+					</td>
+					<td><%= name["recovered"] %>
+					<span class="badge green-text text-accent-4">
+							<% if(name["deltarecovered"]!=0){ %>
+								<%= name["deltarecovered"] %>
+								<i class="material-icons">arrow_upward</i>
+							<% } %>
+						</span></td>
+					<td><%= name["deaths"] %></td>
+				<% } %>
+			  </tr>
+			<% }); %>
+		</tbody>
+		</table>
+	  </div>
+	</div>
+</div>
+<section class="container">
+	<div class="row">
+		<div class="col s6">
+			<div class="">
+				<canvas id="myChart" width="50" height="50"></canvas>
+			</div>
+		</div>
+		<div class="col s6">
+			<div class="">
+				<canvas id="mylineChart" width="50" height="50"></canvas>
+			</div>
+		</div>
+	</div>
+</section>
+<script src="/scripts/data.js" ></script>
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include("partials/footer") %>
