@@ -1,18 +1,15 @@
 <%- include("partials/header") %>
-<h1>COVID-19 Tracker</h1>
-<div class="container">	
+<div class="container">
+		
 	<div class="row">
-	  <div class="col s3">
-			<!-- Grey navigation panel -->
-	  </div>
-	  <div class="col s9 ">
+	  <div class="col s4">
 		<table>
 		<thead>
 		  <tr>
-			  <th>State</th>
-			  <th>Confirmed</th>
-			  <th>Recovered</th>
-			  <th>Deaths</th>
+			<th>State</th>
+			<th>Confirmed</th>
+			<th>Recovered</th>
+			<th>Deaths</th>
 		  </tr>
 		</thead>
 		<tbody>
@@ -41,43 +38,22 @@
 			<% }); %>
 		</tbody>
 		</table>
+	  </div>	  
+	  <div class="col s8">					
+		<section class="container">
+			<div class="card large">			
+				<div class="card-content">
+					<h5>Active</h5>
+					<h5>Recovered</h5>
+					<h5>Deaths</h5>
+					<h5>Total</h5>
+				</div>				
+			</div>
+			<canvas id="myChart" width="50" height="50"></canvas>
+			<canvas id="mylineChart" width="50" height="50"></canvas>
+		</section>
 	  </div>
 	</div>
 </div>
-<section class="container">
-	<div class="row">
-		<div class="col s6">
-			<div class="">
-				<canvas id="myChart" width="50" height="50"></canvas>
-			</div>
-		</div>
-		<div class="col s6">
-			<div class="">
-				<canvas id="mylineChart" width="50" height="50"></canvas>
-			</div>
-		</div>
-	</div>
-</section>
 <script src="/scripts/data.js" ></script>
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <%- include("partials/footer") %>

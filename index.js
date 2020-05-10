@@ -5,6 +5,8 @@ var express		=require('express'),
 
 app.set('view engine','ejs');
 app.use('/scripts',express.static('scripts'));
+app.use('/public',express.static('public'));
+app.use('/assets',express.static('assets'));
 app.use(cors());
 
 //===================================================================================================
@@ -36,9 +38,7 @@ app.get("/graph",function(req,res){
 app.get("/:id",function(req,res){
 	res.render("show",{code:req.params.id});
 });
-// app.get("/",function(req,res){
-// 	res.send("working")
-// })
+
 //===============================================================================================================
 app.listen(process.env.PORT,function(){
 	console.log("server is live")
