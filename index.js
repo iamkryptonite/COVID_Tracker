@@ -1,7 +1,6 @@
 var express		=require('express'),
 	app			=express(),
 	request 	=require('request'),
-	fetch		=require('node-fetch');
 	cors 		=require('cors');
 
 app.set('view engine','ejs');
@@ -9,24 +8,8 @@ app.use('/scripts',express.static('scripts'));
 app.use(cors());
 
 //===================================================================================================
-// var url="https://api.covid19india.org/data.json";
-// async function getData(){
-// 	const response = await fetch(url);
-// 	const data = await response.json();
-// 	let statewise = await data.statewise;
-// 	let label=[];
-// 	let active=[];
-// 	let deaths=[];
-// 	let recovered=[];
-// 	statewise.forEach(element => {
-// 		label.push(element["state"]);
-// 		active.push(element["active"]);
-// 		deaths.push(element["deaths"]);
-// 		recovered.push(element["recovered"]);		
-// 	});
-// }
-app.get("/",function(req,res){
-    // getData();
+
+app.get("/",function(req,res){    
     var url="https://api.covid19india.org/data.json";
     url = url.replace(" ", "%20");
 	request({
@@ -38,19 +21,14 @@ app.get("/",function(req,res){
 		if(!err && response.statusCode===200){
 			var data=JSON.parse(body);
 			var statewise=data.statewise;
-			// console.log(statewise);
-			// res.send("working")
 			res.render("homepage",{data:data});
 		}
 		else{
 			console.log(err)
 			console.log("Problem")
 			res.send("not working")
-
-		}
-		
+		}		
 	});
-	// res.send("not working")	
 })
 app.get("/graph",function(req,res){
 	res.render("graph");
@@ -58,7 +36,6 @@ app.get("/graph",function(req,res){
 app.get("/:id",function(req,res){
 	res.render("show",{code:req.params.id});
 });
-
 // app.get("/",function(req,res){
 // 	res.send("working")
 // })
