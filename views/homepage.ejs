@@ -1,9 +1,8 @@
 <%- include("partials/header") %>
-<div class="container">
-		
+<div class="container">		
 	<div class="row">
-	  <div class="col s4">
-		<table>
+	  <div class="col s5">
+		<table class="highlight">
 		<thead>
 		  <tr>
 			<th>State</th>
@@ -18,18 +17,18 @@
 				<% if(name["statecode"]!="TT"){ %>
 					<td><a href="/<%= name['statecode']%>"><%= name["state"] %></a></td>
 					<td><%= name["confirmed"] %>
-						<span class="badge red-text text-darken-1">
+						<span class="updated red-text text-darken-1">
 							<% if(name["deltaconfirmed"]!=0){ %>
 								<%= name["deltaconfirmed"] %>
-								<i class="material-icons">arrow_upward</i>
+								<i class="tiny material-icons">arrow_upward</i>
 							<% } %>
 						</span>
 					</td>
 					<td><%= name["recovered"] %>
-					<span class="badge green-text text-accent-4">
+					<span class="updated green-text text-accent-4">
 							<% if(name["deltarecovered"]!=0){ %>
 								<%= name["deltarecovered"] %>
-								<i class="material-icons">arrow_upward</i>
+								<i class=" tiny material-icons">arrow_upward</i>
 							<% } %>
 						</span></td>
 					<td><%= name["deaths"] %></td>
@@ -39,14 +38,14 @@
 		</tbody>
 		</table>
 	  </div>	  
-	  <div class="col s8">					
+	  <div class="col s7">					
 		<section class="container">
 			<div class="card large">			
 				<div class="card-content">
-					<h5>Active</h5>
-					<h5>Recovered</h5>
-					<h5>Deaths</h5>
-					<h5>Total</h5>
+					<h3>Active</h3>
+					<h3>Recovered</h3>
+					<h3>Deaths</h3>
+					<h3>Total</h3>
 				</div>				
 			</div>
 			<canvas id="myChart" width="50" height="50"></canvas>

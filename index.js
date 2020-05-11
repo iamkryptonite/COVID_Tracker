@@ -2,11 +2,14 @@ var express		=require('express'),
 	app			=express(),
 	request 	=require('request'),
 	cors 		=require('cors');
+var path = require('path');
 
 app.set('view engine','ejs');
-app.use('/scripts',express.static('scripts'));
+
 app.use('/public',express.static('public'));
-app.use('/assets',express.static('assets'));
+app.use('/scripts',express.static('scripts'));
+app.use(express.static('assets'));
+// app.use(express.static(path.join(__dirname, 'assets')));
 app.use(cors());
 
 //===================================================================================================
