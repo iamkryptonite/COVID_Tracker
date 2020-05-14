@@ -25,8 +25,23 @@ app.get("/",function(req,res){
 	},function(err,response,body){
 		if(!err && response.statusCode===200){
 			var data=JSON.parse(body);
-			var statewise=data.statewise;
-			res.render("homepage",{data:data});
+			var statewise=data["statewise"];
+			statewise.forEach(state => {				
+				if(state["statecode"]=="TT"){
+					var total = {
+						active:state["active"],
+						confirmed:state["confirmed"],
+						deaths:state["deaths"],
+						recovered:state["recovered"],
+						dconfirmed:state["deltaconfirmed"],
+						ddeaths:state["deltadeaths"],
+						drecovered:state["deltarecovered"]
+					};
+					res.render("homepage",{data:data,total:total});
+				}								
+			});
+			
+			
 		}
 		else{
 			console.log(err)

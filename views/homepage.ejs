@@ -1,14 +1,14 @@
 <%- include("partials/header") %>
 <div class="container">		
 	<div class="row">
-	  <div class="col s5">
+	  <div class="col s4">
 		<table class="highlight">
 		<thead>
 		  <tr>
 			<th>State</th>
-			<th>Confirmed</th>
-			<th>Recovered</th>
-			<th>Deaths</th>
+			<th>Confirmed  </th>
+			<th>Recovered  </th>
+			<th>Deaths   </th>
 		  </tr>
 		</thead>
 		<tbody>
@@ -38,18 +38,39 @@
 		</tbody>
 		</table>
 	  </div>	  
-	  <div class="col s7">					
-		<section class="container">
-			<div class="card large">			
+	  <div class="col s8">					
+		<section class="container card-container">
+			<div class="card medium">			
 				<div class="card-content">
-					<h3>Active</h3>
-					<h3>Recovered</h3>
-					<h3>Deaths</h3>
-					<h3>Total</h3>
+					<% console.log(total) %>
+					<h3>Active  <%=total["active"] %><span></span></h3>
+					<h3>Confirmed  <%=total["confirmed"] %>
+						<span class="updated red-text text-darken-1">
+							<% if(total["dconfirmed"]!=0){ %>
+								<%=total["dconfirmed"]%>
+								<!-- <i class="tiny material-icons">arrow_upward</i> -->
+							<% } %>
+						</span>
+					</h3>
+					<h3>Deaths  <%=total["deaths"] %><span></span></h3>
+					<h3>Recovered  <%=total["recovered"] %>
+						<span class="updated green-text text-accent-4">
+							<% if(total["drecovered"]!=0){ %>
+								<%=total["drecovered"]%>
+								<!-- <i class=" small material-icons">arrow_upward</i> -->
+							<% } %>
+						</span>
+					</h3>
 				</div>				
 			</div>
-			<canvas id="myChart" width="50" height="50"></canvas>
-			<canvas id="mylineChart" width="50" height="50"></canvas>
+			<div class="card large">
+				<canvas id="myChart" width="50" height="50"></canvas>
+			</div>
+			<div class="card large">
+				<canvas id="mylineChart" width="50" height="50"></canvas>
+			</div>
+			
+			
 		</section>
 	  </div>
 	</div>

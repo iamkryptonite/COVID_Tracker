@@ -11,13 +11,13 @@ table td,th{
     padding-top: 5px;
     padding-bottom: 5px;
     margin: 0px;
+    min-width: 110px;
     
     
     
 }
 tbody span.updated{
-    font-size: 0.8rem;
-    size: 0.8rem;
+    font-size: 0.8rem;    
     color: black;
 }
 table tbody i{
@@ -25,4 +25,21 @@ table tbody i{
 }
 table tbody a{
     color: black;
+}
+ footer i{
+    margin-left: 10px;
+}
+h3 span.updated{
+    font-size: 1.2rem;
+}
+.card{
+    align-items: flex-end;
+    max-width: 600px;
+    box-shadow: 5px;
+}
+.card-container{
+    margin-right: 0px;
+}
+.col.s8{
+    margin-left: 100px;
 }

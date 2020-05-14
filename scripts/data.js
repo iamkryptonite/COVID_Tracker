@@ -62,22 +62,22 @@ async function chartIt(){
                 label: 'active cases',
                 data: active,
                 backgroundColor: 'rgba(107, 107, 107, 1)',
-                barThickness: 20, 
-                borderWidth: 1
+                barThickness: 15, 
+                borderWidth: 0.8
             },
             {
                 label: 'deaths',
                 data: deaths,
                 backgroundColor: 'rgba(214, 2, 2, 1)',
-                barThickness: 20, 
-                borderWidth: 1
+                barThickness: 15, 
+                borderWidth: 0.8
             },
             {
                 label: 'recovered',
                 data: recovered,
                 backgroundColor: 'rgba(42, 165, 40, 1)',
-                barThickness: 20, 
-                borderWidth: 1
+                barThickness: 15, 
+                borderWidth: 0.8
             }]
         },
         options: {
