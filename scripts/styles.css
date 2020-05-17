@@ -1,9 +1,7 @@
 body{
     font-family: 'Varela Round', sans-serif; 
 }
-.navbar{
-    margin-bottom: 80px;
-}
+
 .navbar nav a.brand-logo{
     margin-left: 30px;
 }
@@ -29,7 +27,7 @@ table tbody a{
  footer i{
     margin-left: 10px;
 }
-h3 span.updated{
+h4 span.updated{
     font-size: 1.2rem;
 }
 .card{
@@ -40,6 +38,20 @@ h3 span.updated{
 .card-container{
     margin-right: 0px;
 }
-.col.s8{
-    margin-left: 100px;
+div.col.s8{
+    padding-right: 0px;
+    padding-left: 100px;
+}
+.wrapper{
+    display: flex;
+}
+.wrapper .side_bar{
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    color:black
+    
+}
+.wrapper .main_content{
+    display:block;
 }

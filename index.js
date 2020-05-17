@@ -35,7 +35,8 @@ app.get("/",function(req,res){
 						recovered:state["recovered"],
 						dconfirmed:state["deltaconfirmed"],
 						ddeaths:state["deltadeaths"],
-						drecovered:state["deltarecovered"]
+						drecovered:state["deltarecovered"],
+						lastupdated:state["lastupdatedtime"]
 					};
 					res.render("homepage",{data:data,total:total});
 				}								

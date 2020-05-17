@@ -6,9 +6,9 @@
 		<thead>
 		  <tr>
 			<th>State</th>
-			<th>Confirmed  </th>
-			<th>Recovered  </th>
-			<th>Deaths   </th>
+			<th class="right-align">Confirmed  </th>
+			<th class="right-align">Recovered  </th>
+			<th class="right-align">Deaths   </th>
 		  </tr>
 		</thead>
 		<tbody>
@@ -16,22 +16,24 @@
 			  <tr>
 				<% if(name["statecode"]!="TT"){ %>
 					<td><a href="/<%= name['statecode']%>"><%= name["state"] %></a></td>
-					<td><%= name["confirmed"] %>
-						<span class="updated red-text text-darken-1">
-							<% if(name["deltaconfirmed"]!=0){ %>
-								<%= name["deltaconfirmed"] %>
-								<i class="tiny material-icons">arrow_upward</i>
-							<% } %>
+					<td class="right-align"><span class="updated red-text text-darken-1">
+						<% if(name["deltaconfirmed"]!=0){ %>
+							<%= name["deltaconfirmed"] %>
+							<i class="tiny material-icons">arrow_upward</i>
+						<% } %>
 						</span>
+						<%= name["confirmed"] %>						
 					</td>
-					<td><%= name["recovered"] %>
-					<span class="updated green-text text-accent-4">
+					<td class="right-align">
+						<span class="updated green-text text-accent-4">
 							<% if(name["deltarecovered"]!=0){ %>
 								<%= name["deltarecovered"] %>
 								<i class=" tiny material-icons">arrow_upward</i>
 							<% } %>
-						</span></td>
-					<td><%= name["deaths"] %></td>
+						</span>
+						<%= name["recovered"] %>
+					</td>
+					<td class="right-align"><%= name["deaths"] %></td>
 				<% } %>
 			  </tr>
 			<% }); %>
@@ -40,27 +42,27 @@
 	  </div>	  
 	  <div class="col s8">					
 		<section class="container card-container">
-			<div class="card medium">			
-				<div class="card-content">
+			<div class="card medium valign-wrapper">			
+				<div class="card-content ">
 					<% console.log(total) %>
-					<h3>Active  <%=total["active"] %><span></span></h3>
-					<h3>Confirmed  <%=total["confirmed"] %>
+					<h4>Active  <%=total["active"] %><span></span></h4>
+					<h4>Confirmed  <%=total["confirmed"] %>
 						<span class="updated red-text text-darken-1">
 							<% if(total["dconfirmed"]!=0){ %>
 								<%=total["dconfirmed"]%>
-								<!-- <i class="tiny material-icons">arrow_upward</i> -->
+								<i class="tiny material-icons">arrow_upward</i>
 							<% } %>
 						</span>
-					</h3>
-					<h3>Deaths  <%=total["deaths"] %><span></span></h3>
-					<h3>Recovered  <%=total["recovered"] %>
+					</h4>
+					<h4>Deaths  <%=total["deaths"] %><span></span></h4>
+					<h4>Recovered  <%=total["recovered"] %>
 						<span class="updated green-text text-accent-4">
 							<% if(total["drecovered"]!=0){ %>
 								<%=total["drecovered"]%>
-								<!-- <i class=" small material-icons">arrow_upward</i> -->
+								<i class=" tiny material-icons">arrow_upward</i>
 							<% } %>
 						</span>
-					</h3>
+					</h4>
 				</div>				
 			</div>
 			<div class="card large">
