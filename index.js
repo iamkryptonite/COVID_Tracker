@@ -61,6 +61,6 @@ app.get("/:id",function(req,res){
 });
 //process.env.PORT
 //===============================================================================================================
-app.listen(3000,function(){
+app.listen(process.env.PORT,function(){
 	console.log("server is live")
 })
