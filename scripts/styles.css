@@ -63,7 +63,6 @@ div .main_content{
 div.social{
     justify-content: center;
     margin-top: 300px;
-    /* position: sticky; */
 }
 .social a{
     color: white;
@@ -72,4 +71,14 @@ div.social{
     background-color: #ffc107;
     border-radius: 5px;
     justify-content: center;
+}
+div.tips{
+    margin-right: 70px;
+}
+div.tips ul:not(default-browser)>li{
+    list-style-type: circle !important;
+    list-style-position: outside;   
+}
+div.tips li{
+    padding: 10px;    
 }

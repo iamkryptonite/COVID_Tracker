@@ -41,8 +41,6 @@ app.get("/",function(req,res){
 					res.render("homepage",{data:data,total:total});
 				}								
 			});
-			
-			
 		}
 		else{
 			console.log(err)
@@ -51,8 +49,12 @@ app.get("/",function(req,res){
 		}		
 	});
 })
+app.get("/tips",function(req,res){
+	res.render("tips");
+})
 app.get("/graph",function(req,res){
-	res.render("graph");
+	console.log("working")
+	res.send("working")
 });
 app.get("/:id",function(req,res){
 	res.render("show",{code:req.params.id});
