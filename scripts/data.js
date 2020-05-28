@@ -24,17 +24,15 @@ async function getData(){
     });
     casesTseries.forEach(element =>{
         if(element["dailyconfirmed"]!=0){
-            if(dconfirmed.length==40){
-                // console.log("removed")
+            if(dconfirmed.length==40){                
                 dconfirmed.shift();
                 tlabels.shift();
             }
             dconfirmed.push(element["dailyconfirmed"]);
             tlabels.push(element["date"]);
         }        
-    })	// console.log(active);
+    })	
 }
-// getData();
 chartIt();
 async function chartIt(){
     await getData();

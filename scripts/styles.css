@@ -2,17 +2,13 @@ body{
     font-family: 'Varela Round', sans-serif; 
 }
 
-.navbar nav a.brand-logo{
+.navbar-fixed nav a.brand-logo{
     margin-left: 30px;
 }
 table td,th{
     padding-top: 5px;
     padding-bottom: 5px;
-    margin: 0px;
     min-width: 110px;
-    
-    
-    
 }
 tbody span.updated{
     font-size: 0.8rem;    
@@ -24,9 +20,6 @@ table tbody i{
 table tbody a{
     color: black;
 }
- footer i{
-    margin-left: 10px;
-}
 h4 span.updated{
     font-size: 1.2rem;
 }
@@ -35,13 +28,6 @@ h4 span.updated{
     max-width: 600px;
     box-shadow: 5px;
 }
-.card-container{
-    margin-right: 0px;
-}
-div.col.s8{
-    padding-right: 0px;
-    padding-left: 100px;
-}
 .wrapper{
     display: flex;
 }
@@ -49,9 +35,41 @@ div.col.s8{
     width: 200px;
     height: 100%;
     position: fixed;
-    color:black
+    margin-right: 50px;
+}
+div .main_content{
+    display:block;
+    margin-left: 250px;
+    margin-top: 80px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+.side_bar ul{
+    margin-top: 80px;
+}
+.side_bar ul li{
+    padding: 15px ;
+    font-size: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
     
 }
-.wrapper .main_content{
-    display:block;
+.side_bar ul li:hover{
+    background-color: #ffc107;
+}
+.side_bar ul li a{
+    color: white;
+}
+div.social{
+    justify-content: center;
+    margin-top: 300px;
+    /* position: sticky; */
+}
+.social a{
+    color: white;
+    padding: 10px;
+    margin: 3px;
+    background-color: #ffc107;
+    border-radius: 5px;
+    justify-content: center;
 }

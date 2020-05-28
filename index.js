@@ -57,8 +57,8 @@ app.get("/graph",function(req,res){
 app.get("/:id",function(req,res){
 	res.render("show",{code:req.params.id});
 });
-
+//process.env.PORT
 //===============================================================================================================
-app.listen(process.env.PORT,function(){
+app.listen(3000,function(){
 	console.log("server is live")
 })
